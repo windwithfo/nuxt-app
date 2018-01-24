@@ -12,6 +12,9 @@
 </template>
 
 <script>
-  import util from './assets/js/test';
+  import util from '../assets/js/test';
   console.log(util.v1);
+  export default {
+    name: 'index'
+  };
 </script>

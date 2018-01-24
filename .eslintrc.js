@@ -138,7 +138,7 @@ module.exports = {
     'no-const-assign': 1,
     'object-property-newline': 1,
     'object-curly-newline': 0,
-    'object-curly-spacing': [1, 'never'],
+    'object-curly-spacing': [1, 'always'],
     'no-new-object': 1,
     // !!的使用
     'no-extra-boolean-cast': 0,
