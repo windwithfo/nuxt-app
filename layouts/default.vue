@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import MyFooter from '../components/Footer.vue';
+  import MyFooter from '~/components/Footer.vue';
 
   export default {
     components: {

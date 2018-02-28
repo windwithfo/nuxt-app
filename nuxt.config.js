@@ -10,38 +10,38 @@ module.exports = {
         configFile: '.stylelintrc.js',
         files: '**/*.vue',
         ignorePath: 'node_modules/**',
-        syntax: 'less'
+        syntax: 'scss'
       })
     ],
     loaders: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: './.eslintrc.js'
-            }
-          }
-        ],
-        include: projectRoot,
-        exclude: /node_modules|.nuxt/
-      },
-      {
-        test: /\.vue$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: './.eslintrc.js'
-            }
-          }
-        ],
-        include: projectRoot,
-        exclude: /node_modules|.nuxt/
-      },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       loader: 'eslint-loader',
+      //       options: {
+      //         configFile: './.eslintrc.js'
+      //       }
+      //     }
+      //   ],
+      //   include: projectRoot,
+      //   exclude: /node_modules|.nuxt/
+      // },
+      // {
+      //   test: /\.vue$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       loader: 'eslint-loader',
+      //       options: {
+      //         configFile: './.eslintrc.js'
+      //       }
+      //     }
+      //   ],
+      //   include: projectRoot,
+      //   exclude: /node_modules|.nuxt/
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         loader: 'url-loader',
@@ -99,5 +99,6 @@ module.exports = {
   */
   loading: {
     color: '#3B8070'
-  }
+  },
+  modules: ['~/modules/typescript']
 };

@@ -1,10 +1,15 @@
+/**
+ * server entry
+ * @author dongkunshan(windwithfo@yeah.net)
+ */
+
 import 'babel-polyfill';
 import Koa  from 'koa';
 import { Nuxt, Builder } from 'nuxt';
 
 const app = new Koa();
 const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js');
