@@ -100,5 +100,6 @@ module.exports = {
   loading: {
     color: '#3B8070'
   },
-  modules: ['~/modules/typescript']
+  modules: ['~/modules/typescript'],
+  plugins: [{ src: '~/plugins/localStorage.js', ssr: false }]
 };
