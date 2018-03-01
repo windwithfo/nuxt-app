@@ -38,12 +38,18 @@
     my-footer
 </template>
 
-<script>
+<script lang="ts">
   import MyFooter from '~/components/Footer.vue';
 
-  export default {
+  import {
+    Component,
+    Vue
+  } from 'nuxt-property-decorator';
+
+  @Component({
     components: {
       MyFooter
     }
-  };
+  })
+  export default class extends Vue {}
 </script>

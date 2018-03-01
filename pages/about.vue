@@ -26,16 +26,25 @@
 </template>
 
 <script lang="ts">
-  export default {
-    asyncData({req}) {
+  import {
+    Component,
+    Vue
+  } from 'nuxt-property-decorator';
+
+  @Component
+  export default class extends Vue {
+    name: string;
+
+    asyncData({ req }) {
       return {
         name: req ? 'server' : 'client'
       };
-    },
+    }
+
     head() {
       return {
         title: `About Page (${this.name}-side)`
       };
     }
-  };
+  }
 </script>

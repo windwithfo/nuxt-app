@@ -4,11 +4,11 @@
  */
 
 export const state = () => ({
-  counter: 0
+  counter: 11
 });
 
 export const mutations = {
-  increment (state) {
-    state.counter++
+  increment(state) {
+    state.counter++;
   }
 };

@@ -5,6 +5,22 @@ const projectRoot = path.resolve(__dirname, '');
 
 module.exports = {
   build: {
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
+        config.module.rules.push({
+          test: /\.(js|vue|ts)$/,
+          enforce: 'pre',
+          use: {
+            loader: 'eslint-loader',
+            options: {
+              configFile: '.eslintrc.js'
+            }
+          },
+          exclude: /node_modules|\.nuxt/
+        });
+      }
+      return config;
+    },
     plugins: [
       new Linter({
         configFile: '.stylelintrc.js',
@@ -12,52 +28,6 @@ module.exports = {
         ignorePath: 'node_modules/**',
         syntax: 'scss'
       })
-    ],
-    loaders: [
-      // {
-      //   test: /\.js$/,
-      //   enforce: 'pre',
-      //   use: [
-      //     {
-      //       loader: 'eslint-loader',
-      //       options: {
-      //         configFile: './.eslintrc.js'
-      //       }
-      //     }
-      //   ],
-      //   include: projectRoot,
-      //   exclude: /node_modules|.nuxt/
-      // },
-      // {
-      //   test: /\.vue$/,
-      //   enforce: 'pre',
-      //   use: [
-      //     {
-      //       loader: 'eslint-loader',
-      //       options: {
-      //         configFile: './.eslintrc.js'
-      //       }
-      //     }
-      //   ],
-      //   include: projectRoot,
-      //   exclude: /node_modules|.nuxt/
-      // },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000,
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000,
-          name: 'fonts/[name].[hash:7].[ext]'
-        }
-      }
     ]
   },
 
@@ -65,7 +35,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'nuxt js starter',
     meta: [
       {
         charset: 'utf-8'

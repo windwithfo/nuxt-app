@@ -17,6 +17,7 @@
     p msg: {{ msg }}
     p ajaxCount: {{ ajaxCount }}
     p ajaxMsg: {{ ajaxMsg }}
+    p counter: {{ counter }}
     button(@click="addCount") add
     button(@click="init") 10
 </template>
@@ -33,25 +34,29 @@
     State,
     Action,
     Mutation,
-    namespace,
-
+    namespace
   } from 'vuex-class';
 
-  const ModuleState = namespace('home', State);
-  const ModuleAction = namespace('home', Action);
-  const ModuleMutation = namespace('home', Mutation);
+  import * as homeStore from '~/store/home';
 
-  @Component({})
+  const HomeState = namespace(homeStore.name, State);
+  const HomeAction = namespace(homeStore.name, Action);
+  const HomeMutation = namespace(homeStore.name, Mutation);
+
+  @Component
   export default class extends Vue {
-    name: string = 'name';
-    @ModuleState msg: string;
-    @ModuleState count: Number;
-    @ModuleAction getData: Function;
-    @ModuleMutation add: Function;
+    @HomeState msg: string;
+    @HomeState count: Number;
+    @HomeAction getData: Function;
+    @HomeMutation add: Function;
+    @State counter: Number;
 
-    async asyncData({ req, app }) {
+    name: string = 'name';
+
+    async asyncData() {
+      util.fun1();
       const ret = await fetch('http://localhost:3002/mock/test.json')
-      .then((response) => response.json());
+        .then((response) => response.json());
       return {
         ajaxCount: ret.count,
         ajaxMsg: ret.msg

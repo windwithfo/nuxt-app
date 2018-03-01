@@ -5,6 +5,8 @@
 
 import fetch from 'isomorphic-fetch';
 
+export const name = 'home';
+
 export const state = () => ({
   count: 0,
   msg: ''
@@ -24,7 +26,7 @@ export const actions = {
   async getData({ commit }, num) {
     console.log(num);
     const ret = await fetch('/mock/test.json')
-    .then((response) => response.json());
+      .then((response) => response.json());
     commit('setData', { count: ret.count, msg: ret.msg });
   }
 };

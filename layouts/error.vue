@@ -23,8 +23,16 @@
     nuxt-link.button(to="/" v-if="error.statusCode === 404") Homepage
 </template>
 
-<script>
-  export default {
-    props: ['error']
-  };
+<script lang="ts">
+  import {
+    Component,
+    Vue,
+    Prop
+  } from 'nuxt-property-decorator';
+
+  @Component
+  export default class extends Vue {
+    @Prop()
+    error: any;
+  }
 </script>
