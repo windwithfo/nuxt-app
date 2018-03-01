@@ -52,6 +52,8 @@
     @State counter: Number;
 
     name: string = 'name';
+    ajaxCount: Number;
+    ajaxMsg: string;
 
     async asyncData() {
       util.fun1();
@@ -61,6 +63,20 @@
         ajaxCount: ret.count,
         ajaxMsg: ret.msg
       };
+    }
+
+    // fetch data
+    fetch() {
+
+    }
+
+    mounted() {
+      console.log(this.getMsg);
+    }
+
+    // computed
+    get getMsg(): string {
+      return `msg is ${this.ajaxMsg}`;
     }
 
     @Emit()
@@ -73,20 +89,4 @@
       this.getData(11);
     }
   }
-  // export default {
-  //   name: 'index',
-  //   async asyncData({ req, app }) {
-  //     const ret = await fetch('http://localhost:3002/mock/test.json')
-  //     .then((response) => response.json());
-  //     return ret;
-  //   },
-  //   methods: {
-  //     add() {
-  //       this.$store.commit('home/add');
-  //     },
-  //     init() {
-  //       this.$store.dispatch('home/getData', 11);
-  //     }
-  //   }
-  // };
 </script>

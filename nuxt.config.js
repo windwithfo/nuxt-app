@@ -1,7 +1,9 @@
-import path   from 'path';
-import Linter from 'stylelint-webpack-plugin';
+/**
+ * nuxt config for project
+ * @author dongkunshan(windwithfo@yeah.net)
+ */
 
-const projectRoot = path.resolve(__dirname, '');
+import Linter from 'stylelint-webpack-plugin';
 
 module.exports = {
   build: {
