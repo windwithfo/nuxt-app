@@ -5,10 +5,14 @@
 
 import fetch from 'isomorphic-fetch';
 
-const Api: any = {
-  home: {}
+const Api = {
+  home: {
+    getNum: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json())
+  },
+  user: {
+    getUserInfo: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json()),
+    login: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json())
+  }
 };
-
-Api.home.getNum = (params) => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json());
 
 export default Api;
