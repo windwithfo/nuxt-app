@@ -23,13 +23,15 @@
 </template>
 
 <script lang="ts">
+  import api  from '~/api/api';
   import util from '~/assets/js/test';
-  import fetch from 'isomorphic-fetch';
+
   import {
     Component,
     Vue,
     Emit
   } from 'nuxt-property-decorator';
+
   import {
     State,
     Action,
@@ -57,8 +59,7 @@
 
     async asyncData() {
       util.fun1();
-      const ret = await fetch('http://localhost:3002/mock/test.json')
-        .then((response) => response.json());
+      const ret = await api.home.getNum();
       return {
         ajaxCount: ret.count,
         ajaxMsg: ret.msg
@@ -66,8 +67,9 @@
     }
 
     // fetch data
-    fetch() {
-
+    async fetch({ store, params }) {
+      const ret = await api.home.getNum(params);
+      store.commit('setStars', ret.count);
     }
 
     mounted() {

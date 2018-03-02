@@ -10,5 +10,8 @@ export const state = () => ({
 export const mutations = {
   increment(state) {
     state.counter++;
+  },
+  setStars(state, num) {
+    state.counter = num;
   }
 };
