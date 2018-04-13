@@ -3,6 +3,7 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
+/* eslint-disable max-len */
 import fetch from 'isomorphic-fetch';
 
 const Api = {
