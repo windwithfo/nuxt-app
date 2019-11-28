@@ -1,38 +1,34 @@
 /**
  * home store
- * @author dongkunshan(windwithfo@yeah.net)
+ * @author dongkunshan(dongkunshan@xueleyun.com)
  */
 
-import fetch from 'isomorphic-fetch';
-
-export const name = 'home';
+import http from 'axios'
 
 export const state = () => ({
   count: 0,
   msg: ''
-});
+})
 
 export const mutations = {
   add(state) {
     // 变更状态
-    state.count++;
+    state.count++
   },
   setData(state, payload) {
-    Object.assign(state, payload);
+    Object.assign(state, payload)
   }
-};
+}
 
 export const actions = {
-  async getData({ commit }, num) {
-    console.log(num);
-    const ret = await fetch('/mock/test.json')
-      .then((response) => response.json());
-    commit('setData', { count: ret.count, msg: ret.msg });
+  async getData({ commit }) {
+    const ret = await http.get('/mock/test.json')
+    commit('setData', { count: ret.data.count, msg: ret.data.msg })
   }
-};
+}
 
 export const getters = {
   msg: (state) => {
-    return state.msg;
+    return state.msg
   }
-};
+}

@@ -4,16 +4,16 @@
  */
 
 /* eslint-disable max-len */
-import fetch from 'isomorphic-fetch';
+import http from 'axios'
 
 const Api = {
   home: {
-    getNum: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json())
+    getNum: (params?): Promise<any> => http.get('http://localhost:3000/mock/test.json', params)
   },
   user: {
-    getUserInfo: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json()),
-    login: (params?): Promise<any> => fetch('http://localhost:3002/mock/test.json', params).then((response) => response.json())
+    getUserInfo: (params?): Promise<any> => http.get('http://localhost:3000/mock/test.json', params),
+    login: (params?): Promise<any> => http.get('http://localhost:3000/mock/test.json', params)
   }
-};
+}
 
-export default Api;
+export default Api

@@ -1,4 +1,13 @@
 <style lang="scss" scoped>
+  .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    margin: 0 70px;
+  }
+
   .title {
     margin: 50px 0;
 
@@ -17,78 +26,62 @@
     p msg: {{ msg }}
     p ajaxCount: {{ ajaxCount }}
     p ajaxMsg: {{ ajaxMsg }}
-    p counter: {{ counter }}
-    button(@click="addCount") add
-    button(@click="init") 10
+    a-button(@click="addCount") add
+    a-button(@click="init") 10
+    Logo
 </template>
 
 <script lang="ts">
-  import api  from '~/api/api';
-  import util from '~/assets/js/test';
-
   import {
-    Component,
     Vue,
-    Emit
-  } from 'nuxt-property-decorator';
-
-  import {
     State,
-    Action,
-    Mutation,
-    namespace
-  } from 'vuex-class';
+    Component,
+    namespace,
+  } from 'nuxt-property-decorator'
 
-  import * as homeStore from '~/store/home';
+  import http from 'axios'
+  import { Button } from 'ant-design-vue'
+  import { L } from '~/assets/js/util'
+  import Logo from '~/components/Logo.vue'
 
-  const HomeState = namespace(homeStore.name, State);
-  const HomeAction = namespace(homeStore.name, Action);
-  const HomeMutation = namespace(homeStore.name, Mutation);
-
-  @Component
-  export default class extends Vue {
-    @HomeState msg: string;
-    @HomeState count: Number;
-    @HomeAction getData: Function;
-    @HomeMutation add: Function;
-    @State counter: Number;
-
-    name: string = 'name';
-    ajaxCount: Number;
-    ajaxMsg: string;
+  const moduleHome = namespace('home')
+  @Component({
+    components: {
+      Button,
+      Logo
+    }
+  })
+  export default class Index extends Vue {
+    name = 'index'
+    @moduleHome.State msg
+    @moduleHome.State count
+    @moduleHome.Action getData
+    @moduleHome.Mutation add
+    @State counter
 
     async asyncData() {
-      util.fun1();
-      const ret = await api.home.getNum();
+      const ret = await http.get('http://localhost:3000/mock/test.json')
       return {
-        ajaxCount: ret.count,
-        ajaxMsg: ret.msg
-      };
+        ajaxCount: ret.data.count,
+        ajaxMsg: ret.data.msg,
+      }
     }
 
-    // fetch data
-    async fetch({ store, params }) {
-      const ret = await api.home.getNum(params);
-      store.commit('setStars', ret.count);
+    created() {
+      if (!this.$isServer) {
+        L('created')
+      }
     }
 
     mounted() {
-      console.log(this.getMsg);
     }
 
-    // computed
-    get getMsg(): string {
-      return `msg is ${this.ajaxMsg}`;
+    addCount() {
+      this.add()
     }
 
-    @Emit()
-    addCount(): void {
-      this.add();
-    }
-
-    @Emit()
-    init(): void {
-      this.getData(11);
+    init() {
+      this.getData(11)
     }
   }
 </script>

@@ -1,17 +1,14 @@
 /**
  * store entry
- * @author dongkunshan(windwithfo@yeah.net)
+ * @author dongkunshan(dongkunshan@xueleyun.com)
  */
 
 export const state = () => ({
-  counter: 11
-});
+  counter: 0
+})
 
 export const mutations = {
-  increment(state) {
-    state.counter++;
-  },
-  setStars(state, num) {
-    state.counter = num;
+  increment (state) {
+    state.counter++
   }
-};
+}

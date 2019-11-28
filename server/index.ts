@@ -1,47 +1,46 @@
 /**
- * server entry
- * @author dongkunshan(windwithfo@yeah.net)
+ * 服务端入口
+ * @author dongkunshan(dongkunshan@xueleyun.com)
  */
 
-import 'babel-polyfill';
-import Koa  from 'koa';
-import { Nuxt, Builder } from 'nuxt';
-
-const app = new Koa();
-const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3002;
+import Koa from 'koa'
+import consola from 'consola'
+import { Nuxt, Builder } from 'nuxt'
+import config from '../nuxt.config'
 
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js');
-config.dev = !(app.env === 'production');
-// Instanciate nuxt.js
-const nuxt = new Nuxt(config);
-// Build in development
-if (config.dev) {
-  try {
-    const builder = new Builder(nuxt);
-    builder.build();
+const app = new Koa()
+config.dev = app.env !== 'production'
+
+async function start () {
+  // Instantiate nuxt.js
+  const nuxt = new Nuxt(config)
+
+  const {
+    host = process.env.HOST || '127.0.0.1',
+    port = process.env.PORT || 3000
+  } = nuxt.options.server
+
+  // Build in development
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
   }
-  catch (e) {
-    // eslint-disable-line no-console
-    console.error(e);
-    process.exit(1);
-  }
+
+  app.use((ctx) => {
+    ctx.status = 200
+    ctx.respond = false // Bypass Koa's built-in response handling
+    ctx.req.ctx = ctx // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
+    nuxt.render(ctx.req, ctx.res)
+  })
+
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
 }
 
-app.use(async (ctx) => {
-  // koa defaults to 404 when it sees that status is unset
-  ctx.status = 200;
-  return new Promise((resolve, reject) => {
-    ctx.res.on('close', resolve);
-    ctx.res.on('finish', resolve);
-    nuxt.render(ctx.req, ctx.res, (promise) => {
-      // nuxt.render passes a rejected promise into callback on error.
-      promise.then(resolve).catch(reject);
-    });
-  });
-});
-
-app.listen(port, host);
-// eslint-disable-line no-console
-console.log('Server listening on ' + host + ':' + port);
+start()

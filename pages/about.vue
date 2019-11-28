@@ -1,5 +1,8 @@
 <style lang="scss" scoped>
   .container {
+    width: 300px;
+    margin: 0 auto;
+
     .title {
       margin-top: 50px;
     }
@@ -28,23 +31,22 @@
 <script lang="ts">
   import {
     Component,
-    Vue
-  } from 'nuxt-property-decorator';
+    Vue,
+  } from 'nuxt-property-decorator'
 
-  @Component
-  export default class extends Vue {
-    name: string;
-
+  @Component({})
+  export default class About extends Vue {
+    name: string
     asyncData({ req }) {
       return {
         name: req ? 'server' : 'client'
-      };
+      }
     }
 
     head() {
       return {
         title: `About Page (${this.name}-side)`
-      };
+      }
     }
   }
 </script>
