@@ -1,8 +1,3 @@
-/**
- * @file eslint配置
- * @author dongkunshan(dongkunshan@xueleyun.com)
- */
-
 module.exports = {
   root: true,
   env: {
@@ -125,7 +120,7 @@ module.exports = {
     // 回调嵌套深度
     'max-nested-callbacks': [2, 4],
     // 字符串最大长度
-    'max-len': [2, 120],
+    'max-len': [2, 200],
     // 对象字面量中冒号的前后空格
     'key-spacing': [2, {
       beforeColon: false,

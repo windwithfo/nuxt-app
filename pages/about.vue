@@ -36,8 +36,8 @@
 
   @Component({})
   export default class About extends Vue {
-    name: string
-    asyncData({ req }) {
+    name = 'about'
+    asyncData({ req }: any) {
       return {
         name: req ? 'server' : 'client'
       }

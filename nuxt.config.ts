@@ -1,15 +1,6 @@
-/**
- * nuxt js 全局配置
- * @author dongkunshan(dongkunshan@xueleyun.com)
- */
-
-import Linter from 'stylelint-webpack-plugin'
 import { Configuration } from '@nuxt/types'
 
 const config: Configuration = {
-  // Type or Press `Ctrl + Space` for autocompletion
-  // universal or spa
-  // mode: 'universal',
   mode: 'spa',
   /*
   ** Headers of the page
@@ -48,12 +39,8 @@ const config: Configuration = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    ['@nuxt/typescript-build', {
-      typeCheck: {
-        eslint: true
-      },
-      ignoreNotFoundWarnings: true
-    }]
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -61,7 +48,10 @@ const config: Configuration = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
+    '@nuxt/typescript-build'
   ],
   /*
   ** Axios module configuration
@@ -73,49 +63,24 @@ const config: Configuration = {
   ** Build configuration
   */
   build: {
-    additionalExtensions: ['ts', 'tsx'],
     babel: {
       plugins: [
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }]
       ]
     },
-    plugins: [
-      new Linter({
-        configFile: '.stylelintrc.js',
-        files: ['page/**/*.vue', 'assets/**/*.css'],
-        ignorePath: 'node_modules/**',
-        syntax: 'scss'
-      })
-    ],
+    // additionalExtensions: ['.ts', '.tsx'],
     /*
     ** You can extend webpack config here
-    ** extend (config, ctx)
     */
-    extend () {
-      // config!.resolve!.extensions!.push('.ts')
-      // config!.module!.rules.push({
-      //   test: /\.ts$/,
-      //   use: [
-      //     {
-      //       loader: 'babel-loader'
-      //     },
-      //     {
-      //       loader: 'ts-loader',
-      //       options: {
-      //         appendTsSuffixTo: [/\.vue$/]
-      //       }
-      //     }
-      //   ],
-      //   exclude: /node_modules/
-      // })
-    }
+    // extend (config, ctx) {
+    // }
   },
-  server: {
-    port: 3000,
-    host: '0.0.0.0',
-    timing: true,
-    socket: '/tmp/nuxt.socket'
+  typescript: {
+    typeCheck: {
+      eslint: true,
+    },
+    ignoreNotFoundWarnings: true
   },
   pwa: {
     workbox: {
@@ -123,7 +88,11 @@ const config: Configuration = {
       cachingExtensions: '@/plugins/workbox-range-request.js',
     }
   },
-  dev: true
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    timing: true
+  }
 }
 
 export default config

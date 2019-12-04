@@ -1,4 +1,4 @@
-export function L(...arg) {
+export function L(...arg: any) {
   /* eslint-disable */
   console.log(...arg)
   /* eslint-enable */

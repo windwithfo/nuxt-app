@@ -1,10 +1,6 @@
-/**
- * @file stylelint配置
- * @author dongkunshan(dongkunshan@xueleyun.com)
- */
-
 module.exports = {
-  processors: ['stylelint-processor-html'],
+  // add your custom config here
+  // https://stylelint.io/user-guide/configuration
   rules: {
     // 色值定义使用小写字母
     'color-hex-case': 'lower',

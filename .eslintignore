@@ -1,0 +1,9 @@
+jest.config.js
+node_modules/
+dist
+out
+.nuxt
+test/
+.git
+plugins/*.js
+static/sw.js

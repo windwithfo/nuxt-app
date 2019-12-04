@@ -28,6 +28,7 @@
     p ajaxMsg: {{ ajaxMsg }}
     a-button(@click="addCount") add
     a-button(@click="init") 10
+    br
     Logo
 </template>
 
@@ -53,11 +54,11 @@
   })
   export default class Index extends Vue {
     name = 'index'
-    @moduleHome.State msg
-    @moduleHome.State count
-    @moduleHome.Action getData
-    @moduleHome.Mutation add
-    @State counter
+    @moduleHome.State msg: any
+    @moduleHome.State count: any
+    @moduleHome.Action getData: any
+    @moduleHome.Mutation add: any
+    @State counter: any
 
     async asyncData() {
       const ret = await http.get('http://localhost:3000/mock/test.json')

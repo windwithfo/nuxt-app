@@ -1,6 +1,6 @@
 # nuxt-app
 
-> My cat&#39;s meow Nuxt.js project
+> My well-made Nuxt.js project
 
 ## Build Setup
 
