@@ -1,7 +1,7 @@
 /* global ReturnType */
 /**
  * store entry
- * @author dongkunshan(dongkunshan@xueleyun.com)
+ * @author dongkunshan(windwithfo@yeah.net)
  */
 
 import { MutationTree } from 'vuex'
