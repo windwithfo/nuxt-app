@@ -1,6 +1,6 @@
 <template lang="pug">
-  div
-    nuxt
+div.layout
+  slot
 </template>
 
 <style lang="scss">
