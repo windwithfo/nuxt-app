@@ -3,7 +3,8 @@ node_modules/
 dist
 out
 .nuxt
+.output
 test/
 .git
 plugins/*.js
-static/sw.js
+static/*.js

@@ -1,5 +1,5 @@
 <template lang="pug">
-div.layout
+#layout
   slot
 </template>
 

@@ -26,7 +26,7 @@ export const mutations: MutationTree<HomeState> = {
 
 export const actions: ActionTree<HomeState, HomeState> = {
   async getData({ commit }) {
-    const ret = await http.get('/api/test')
+    const ret: any = await http.get('/api/test')
     commit('setData', { count: ret.data.count, msg: ret.data.msg })
   }
 }
