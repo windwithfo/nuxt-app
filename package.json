@@ -18,7 +18,7 @@
     "axios": "0.23.0",
     "core-js": "3.15.1",
     "element-ui": "2.15.2",
-    "nuxt3": "3.0.0-27243104.5e903ae",
+    "nuxt3": "3.0.0-27244261.c49f9ca",
     "vuex": "4.0.2"
   },
   "devDependencies": {

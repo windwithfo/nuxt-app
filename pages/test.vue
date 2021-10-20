@@ -1,6 +1,10 @@
 <template lang="pug">
+Head
+  Title test page
+  Meta(name="description" content="nuxt3 test")
+  Link(rel="icon" type="image/x-icon" href="/favicon.ico")
+
 section.container
-  PageHead
   img.logo(src="~/assets/img/logo.png" alt="Nuxt.js Logo")
   h1.title Universal Vue.js Application Framework
   nuxt-link.button(to="/about") To About page
@@ -39,20 +43,6 @@ const init = async () => {
 <script lang="ts">
 export default {
   name: 'Index',
-  async asyncData() {
-    let ret
-    try {
-      console.log(`${process.env.NUXT_PUBLIC_API_URL}/api/test`)
-      ret = await http.get(`${process.env.NUXT_PUBLIC_API_URL}/api/test`)
-    } catch (error) {
-      console.log(error)
-    }
-    // const ret = await http.get(`${process.env.NUXT_PUBLIC_API_URL}/api/test`)
-    return {
-      ajaxCount: ret?.data.count,
-      ajaxMsg: ret?.data.msg,
-    }
-  },
   created() {
     if (this.$isServer) {
       L('created')
@@ -65,17 +55,17 @@ export default {
 .container {
   width: 500px;
   margin: 0 auto;
-}
 
-.logo {
-  margin: 0 70px;
-}
+  .logo {
+    margin: 0 70px;
+  }
 
-.title {
-  margin: 50px 0;
-
-  p {
-    color: #000;
+  .title {
+    margin: 50px 0;
+  
+    p {
+      color: #000;
+    }
   }
 }
 </style>

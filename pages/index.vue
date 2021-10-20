@@ -1,3 +1,9 @@
 <template lang="pug">
-NuxtWelcome
+.index Index Home
 </template>
+
+<style lang="scss" scoped>
+.index {
+  font-size: 20px;
+}
+</style>

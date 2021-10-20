@@ -16,7 +16,7 @@ svg.NuxtLogo(width="245" height="180" viewBox="0 0 452 342" xmlns="http://www.w3
     )
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .NuxtLogo {
   animation: 1s appear;
 }

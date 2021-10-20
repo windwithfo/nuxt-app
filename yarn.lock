@@ -701,10 +701,10 @@
     error-stack-parser "^2.0.0"
     string-width "^4.2.3"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27243104.5e903ae":
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/@nuxt%2fkit-edge/-/kit-edge-3.0.0-27243104.5e903ae.tgz#e2dc14b17ab8fdb685f40eb1b1bc6ae1a4777d51"
-  integrity sha1-4twUsXq4/baF9A6xsbxq4aR3fVE=
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27244261.c49f9ca":
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/@nuxt%2fkit-edge/-/kit-edge-3.0.0-27244261.c49f9ca.tgz#8065fff95e1ca88c2a28b3826a7cd2667334b1b0"
+  integrity sha1-gGX/+V4cqIwqKLOCanzSZnM0sbA=
   dependencies:
     consola "^2.15.3"
     create-require "^1.1.1"
@@ -726,16 +726,16 @@
     unctx "^1.0.2"
     untyped "^0.2.9"
 
-"@nuxt/nitro@npm:@nuxt/nitro-edge@3.0.0-27243104.5e903ae":
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/@nuxt%2fnitro-edge/-/nitro-edge-3.0.0-27243104.5e903ae.tgz#c03758d3b89f3cd15ef3f645c3e77c0ceb4be197"
-  integrity sha1-wDdY07ifPNFe8/ZFw+d8DOtL4Zc=
+"@nuxt/nitro@npm:@nuxt/nitro-edge@3.0.0-27244261.c49f9ca":
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/@nuxt%2fnitro-edge/-/nitro-edge-3.0.0-27244261.c49f9ca.tgz#306e897d506314270fc436f13be9811632056673"
+  integrity sha1-MG6JfVBjFCcPxDbxO+mBFjIFZnM=
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.1.3"
     "@netlify/functions" "^0.7.2"
     "@nuxt/design" "0.1.3"
     "@nuxt/devalue" "^2.0.0"
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27243104.5e903ae"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27244261.c49f9ca"
     "@rollup/plugin-alias" "^3.1.5"
     "@rollup/plugin-commonjs" "^21.0.0"
     "@rollup/plugin-inject" "^4.0.2"
@@ -824,12 +824,12 @@
     ts-loader "^8.0.17"
     typescript "~4.2"
 
-"@nuxt/vite-builder@npm:@nuxt/vite-builder-edge@3.0.0-27243104.5e903ae":
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/@nuxt%2fvite-builder-edge/-/vite-builder-edge-3.0.0-27243104.5e903ae.tgz#8fd8f8431b56a41b80b3544f19447bea37a891e7"
-  integrity sha1-j9j4QxtWpBuAs1RPGUR76jeokec=
+"@nuxt/vite-builder@npm:@nuxt/vite-builder-edge@3.0.0-27244261.c49f9ca":
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/@nuxt%2fvite-builder-edge/-/vite-builder-edge-3.0.0-27244261.c49f9ca.tgz#8d87474e61dcf466e049209e2d97cb6d707e7f4a"
+  integrity sha1-jYdHTmHc9GbgSSCeLZfLbXB+f0o=
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27243104.5e903ae"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27244261.c49f9ca"
     "@vitejs/plugin-vue" "^1.9.3"
     "@vitejs/plugin-vue-jsx" "^1.2.0"
     autoprefixer "^10.3.7"
@@ -844,17 +844,17 @@
     postcss-import-resolver "^2.0.0"
     postcss-url "^10.1.3"
     ufo "^0.7.9"
-    vite "^2.6.9"
+    vite "^2.6.10"
     vue "3.2.20"
 
-"@nuxt/webpack-builder@npm:@nuxt/webpack-builder-edge@3.0.0-27243104.5e903ae":
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/@nuxt%2fwebpack-builder-edge/-/webpack-builder-edge-3.0.0-27243104.5e903ae.tgz#c6f951fc3db4d4b0b5331d64d97631419047ce97"
-  integrity sha1-xvlR/D201LC1Mx1k2XYxQZBHzpc=
+"@nuxt/webpack-builder@npm:@nuxt/webpack-builder-edge@3.0.0-27244261.c49f9ca":
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/@nuxt%2fwebpack-builder-edge/-/webpack-builder-edge-3.0.0-27244261.c49f9ca.tgz#5f6b1d7f4dc0f40e702a26d6b9584325baac3d7a"
+  integrity sha1-X2sdf03A9A5wKibWuVhDJbqsPXo=
   dependencies:
     "@babel/core" "^7.15.8"
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.2"
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27243104.5e903ae"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27244261.c49f9ca"
     "@vue/babel-preset-jsx" "^1.2.4"
     autoprefixer "^10.3.7"
     babel-loader "^8.2.2"
@@ -6865,25 +6865,25 @@ number-is-nan@^1.0.0:
   resolved "http://public.npmjs.hcinner/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-"nuxi@npm:nuxi-edge@3.0.0-27243104.5e903ae":
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/nuxi-edge/-/nuxi-edge-3.0.0-27243104.5e903ae.tgz#d51a89ee361e6966fffdb974ab9e04745f52723f"
-  integrity sha1-1RqJ7jYeaWb//bl0q54EdF9Scj8=
+"nuxi@npm:nuxi-edge@3.0.0-27244261.c49f9ca":
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/nuxi-edge/-/nuxi-edge-3.0.0-27244261.c49f9ca.tgz#ccd11148a416eb36643ad546d1d8e71e9711fc49"
+  integrity sha1-zNERSKQW6zZkOtVG0djnHpcR/Ek=
   dependencies:
     semver "^7.3.5"
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt3@3.0.0-27243104.5e903ae:
-  version "3.0.0-27243104.5e903ae"
-  resolved "http://public.npmjs.hcinner/nuxt3/-/nuxt3-3.0.0-27243104.5e903ae.tgz#3ca331b1f36ddddc3601369a50574a3263598ce4"
-  integrity sha1-PKMxsfNt3dw2ATaaUFdKMmNZjOQ=
+nuxt3@3.0.0-27244261.c49f9ca:
+  version "3.0.0-27244261.c49f9ca"
+  resolved "http://public.npmjs.hcinner/nuxt3/-/nuxt3-3.0.0-27244261.c49f9ca.tgz#e6f108bbe9d4ad377d7784cdd3b3cf6178e0fe69"
+  integrity sha1-5vEIu+nUrTd9d4TN07PPYXjg/mk=
   dependencies:
     "@nuxt/design" "^0.1.3"
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27243104.5e903ae"
-    "@nuxt/nitro" "npm:@nuxt/nitro-edge@3.0.0-27243104.5e903ae"
-    "@nuxt/vite-builder" "npm:@nuxt/vite-builder-edge@3.0.0-27243104.5e903ae"
-    "@nuxt/webpack-builder" "npm:@nuxt/webpack-builder-edge@3.0.0-27243104.5e903ae"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.0-27244261.c49f9ca"
+    "@nuxt/nitro" "npm:@nuxt/nitro-edge@3.0.0-27244261.c49f9ca"
+    "@nuxt/vite-builder" "npm:@nuxt/vite-builder-edge@3.0.0-27244261.c49f9ca"
+    "@nuxt/webpack-builder" "npm:@nuxt/webpack-builder-edge@3.0.0-27244261.c49f9ca"
     "@vue/reactivity" "3.2.20"
     "@vue/shared" "3.2.20"
     "@vueuse/head" "^0.6.0"
@@ -6896,7 +6896,7 @@ nuxt3@3.0.0-27243104.5e903ae:
     ignore "^5.1.8"
     mlly "^0.2.10"
     murmurhash-es "^0.1.1"
-    nuxi "npm:nuxi-edge@3.0.0-27243104.5e903ae"
+    nuxi "npm:nuxi-edge@3.0.0-27244261.c49f9ca"
     ohmyfetch "^0.3.1"
     pathe "^0.2.0"
     scule "^0.2.1"
@@ -9413,7 +9413,7 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
-vite@^2.6.9:
+vite@^2.6.10:
   version "2.6.10"
   resolved "http://public.npmjs.hcinner/vite/-/vite-2.6.10.tgz#7a4f420c6e2c7d9062c7f9ce4578a817c72b3842"
   integrity sha1-ek9CDG4sfZBix/nORXioF8crOEI=
