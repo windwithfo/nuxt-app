@@ -15,7 +15,8 @@ section.container
   button(@click="addCount") add
   button(@click="init") 10
   br
-  LazyNuxtLogo
+  NuxtLogo
+  //- LazyNuxtLogo
 </template>
 
 <script lang="ts" setup>

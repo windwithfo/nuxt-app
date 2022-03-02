@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
+  components: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   meta: {
     charset: 'utf-8',
