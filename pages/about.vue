@@ -5,7 +5,7 @@ section.container
   img.logo(src="~/assets/img/logo.png" alt="Nuxt.js Logo")
   h1.title This page is loaded from the {{ name }}
   h2.info(v-if="name === 'client'") Please refresh the page
-  nuxt-link.button(to="/") To Home page
+  NuxtLink.button(to="/") To Home page
 </template>
 
 <script lang="ts" setup>

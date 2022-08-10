@@ -1,13 +1,13 @@
 <template lang="pug">
-Head
-  Title test page
-  Meta(name="description" content="nuxt3 test")
-  Link(rel="icon" type="image/x-icon" href="/favicon.ico")
-
 section.container
+  Head
+    Title test page
+    Meta(name="description" content="nuxt3 test")
+    Link(rel="icon" type="image/x-icon" href="/favicon.ico")
+
   img.logo(src="~/assets/img/logo.png" alt="Nuxt.js Logo")
   h1.title Universal Vue.js Application Framework
-  nuxt-link.button(to="/about") To About page
+  NuxtLink.button(to="/about") To About page
   p count: {{ count }}
   p msg: {{ msg }}
   p ajaxCount: {{ ajaxCount }}
@@ -15,13 +15,12 @@ section.container
   button(@click="addCount") add
   button(@click="init") 10
   br
-  NuxtLogo
-  //- LazyNuxtLogo
+  //- NuxtLogo
+  LazyNuxtLogo
 </template>
 
 <script lang="ts" setup>
-import http from 'axios'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { L } from '~/assets/js/util'
 
 const msg: any = ref('msg')
@@ -31,14 +30,19 @@ const ajaxCount = ref(0)
 const addCount = () => {
   count.value++
 }
-const { data } = await useFetch('/api/test')
-ajaxMsg.value = data.value.msg
-ajaxCount.value = data.value.count
+
+onMounted(async ()=> {
+  const { data } = await useFetch('/api/test')
+  ajaxMsg.value = data.value?.msg
+  ajaxCount.value = data.value?.count
+})
+
 const init = async () => {
   const data: any = await $fetch('/api/test')
   ajaxMsg.value = data.msg + 'ajax'
   ajaxCount.value = data.count + 1
 }
+
 </script>
 
 <script lang="ts">

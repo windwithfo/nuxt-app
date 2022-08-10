@@ -1,6 +1,9 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
+  typescript: {
+    shim: false
+  },
   components: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   meta: {
