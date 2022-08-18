@@ -12,8 +12,8 @@ section.container
   p msg: {{ msg }}
   p ajaxCount: {{ ajaxCount }}
   p ajaxMsg: {{ ajaxMsg }}
-  button(@click="addCount") add
-  button(@click="init") 10
+  el-button(@click="addCount") add
+  el-button(@click="init") 10
   br
   //- NuxtLogo
   LazyNuxtLogo

@@ -1,9 +1,11 @@
 <template lang="pug">
 #app
-  NuxtPage
+  NuxtLayout(name='custom')
+    NuxtPage
 </template>
 
 <style lang="scss">
+@import 'element-plus/dist/index.css';
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 16px;
