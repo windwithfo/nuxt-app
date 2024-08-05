@@ -2,7 +2,9 @@ export default defineNuxtConfig({
   typescript: {
     shim: false
   },
+
   components: true,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   app: {
     head: {
@@ -11,5 +13,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
     }
-  }
+  },
+
+  compatibilityDate: '2024-07-31'
 })
