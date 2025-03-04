@@ -5,55 +5,44 @@ section.container
     Meta(name="description" content="nuxt3 test")
     Link(rel="icon" type="image/x-icon" href="/favicon.ico")
 
-  img.logo(src="~/assets/img/logo.png" alt="Nuxt.js Logo")
   h1.title Universal Vue.js Application Framework
-  NuxtLink.button(to="/about") To About page
   p count: {{ count }}
   p msg: {{ msg }}
-  p ajaxCount: {{ ajaxCount }}
-  p ajaxMsg: {{ ajaxMsg }}
+  p ajaxCount: {{ ajax.count }}
+  p ajaxMsg: {{ ajax.msg }}
   el-button(@click="addCount") add
   el-button(@click="init") 10
   br
-  //- NuxtLogo
-  LazyNuxtLogo
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import { L } from '~/assets/js/util'
+  import { onMounted, ref, reactive } from 'vue'
+  
+  const msg: any = ref('msg')
+  const count: any = ref(0)
+  const { data } = await useFetch('/api/system/info')
+  const ajax = reactive({
+    msg: '',
+    count: 0
+  })
 
-const msg: any = ref('msg')
-const count: any = ref(0)
-const ajaxMsg = ref('')
-const ajaxCount = ref(0)
-const addCount = () => {
-  count.value++
-}
+  ajax.msg = data.value?.msg || ''
+  ajax.count = data.value?.count || 0
 
-onMounted(async ()=> {
-  const { data } = await useFetch('/api/test')
-  ajaxMsg.value = data.value?.msg
-  ajaxCount.value = data.value?.count
-})
+  function addCount() {
+    count.value++
+  }
 
-const init = async () => {
-  const data: any = await $fetch('/api/test')
-  ajaxMsg.value = data.msg + 'ajax'
-  ajaxCount.value = data.count + 1
-}
+  onMounted(async () => {
+    log(useUser().value)
+  })
 
-</script>
+  async function init() {
+    const data: any = await $fetch('/api/system/info')
+    ajax.msg = data.msg + 'ajax'
+    ajax.count = data.count + count.value
+  }
 
-<script lang="ts">
-export default {
-  name: 'Index',
-  created() {
-    if (this.$isServer) {
-      L('created')
-    }
-  },
-}
 </script>
 
 <style lang="scss" scoped>

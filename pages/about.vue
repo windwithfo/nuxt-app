@@ -2,25 +2,19 @@
 section.container
   Head
     Title About Page ({{ name }}-side)
-  img.logo(src="~/assets/img/logo.png" alt="Nuxt.js Logo")
+
   h1.title This page is loaded from the {{ name }}
   h2.info(v-if="name === 'client'") Please refresh the page
-  NuxtLink.button(to="/") To Home page
+  img.logo(src="~assets/logo.png" alt="Nuxt.js Logo")
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-const name = ref('client')
+const name = ref('')
 
 onMounted(() => {
-  name.value = 'server'
+  import.meta.server ? name.value = 'server' : name.value = 'client'
 })
-</script>
-
-<script lang="ts">
-export default {
-  name: 'About'
-}
 </script>
 
 <style lang="scss" scoped>

@@ -1,9 +1,5 @@
-export function L(...arg: any) {
+export default function (...arg: any) {
   /* eslint-disable */
   console.log(...arg)
   /* eslint-enable */
-}
-
-export default {
-  L
 }

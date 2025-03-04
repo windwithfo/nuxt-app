@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'bun:test'
 import { mount } from '@vue/test-utils'
 import NuxtLogo from '@/components/NuxtLogo.vue'
 

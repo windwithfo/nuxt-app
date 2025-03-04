@@ -1,10 +1,8 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  typescript: {
-    shim: false
+  future: {
+    compatibilityVersion: 4,
   },
-
-  components: true,
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   app: {
     head: {
@@ -14,6 +12,12 @@ export default defineNuxtConfig({
       ]
     }
   },
-
-  compatibilityDate: '2024-07-31'
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true },
+  runtimeConfig: {
+    apiSecret: 'api_secret_token', // can be overridden by NUXT_API_SECRET environment variable
+    public: {
+      apiBase: 'https://api-', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+    }
+  },
 })

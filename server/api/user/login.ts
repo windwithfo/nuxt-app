@@ -1,5 +1,5 @@
 /**
- * home store
+ * login
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
